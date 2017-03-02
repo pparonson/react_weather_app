@@ -11,8 +11,10 @@ const React = require('react');
 // As long a react fn class is stateless; refactor to:
 const About = (props) => {
   return (
-    <h3>About</h3>
-    <p>Welcome to the About page.</p>
+    <div>
+      <h3>About</h3>
+      <p>Welcome to the About page.</p>
+    </div>
   );
 };
 
