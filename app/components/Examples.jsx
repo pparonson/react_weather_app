@@ -1,12 +1,5 @@
 const React = require('react');
 const {Link} = require('react-router')
-// const Examples = React.createClass({
-//   render() {
-//     return (
-//       <h3>Examples Component</h3>
-//     );
-//   }
-// });
 
 const Examples = (props) => {
   return (
