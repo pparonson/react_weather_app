@@ -10,41 +10,48 @@ const About = (props) => {
       <ol>
         <li>
           <a href="https://facebook.github.io/react/">
-            React - Javascript library for building the user interface.
+            React
           </a>
+          - Javascript library for building the user interface.
         </li>
         <li>
           <a href="https://webpack.js.org/">
-            Webpack - Build tool used for splitting code base, adding plugins
-            and loaders.
+            Webpack
           </a>
+          - Build tool used for splitting code base, adding plugins
+          and loaders.
         </li>
         <li>
           <a href="https://www.openweathermap.org/">
-            OpenWeatherMap - API used to provide weather data based on
-            submitted location data.
+            OpenWeatherMap
           </a>
+          - API used to provide weather data based on
+          submitted location data.
         </li>
         <li>
           <a href="https://nodejs.org/en/">
-            Node.js - Application runtime environment. NPM is used for package
-            management.
+            Node.js
           </a>
+          - Application runtime environment. NPM is used for package
+          management.
         </li>
         <li>
           <a href="http://expressjs.com/">
-            Express - Node.js web application framework.
+            Express
           </a>
+          - Node.js web application framework.
         </li>
         <li>
           <a href="https://babeljs.io/">
-          Babel - Javascript compiler used to support ES6 features and syntax.
+          Babel
           </a>
+          - Javascript compiler used to support ES6 features and syntax.
         </li>
         <li>
           <a href="http://foundation.zurb.com/">
-            Foundation - Front-end framework used to style the application.
+            Foundation
           </a>
+          - Front-end framework used to style the application.
         </li>
       </ol>
     </div>
