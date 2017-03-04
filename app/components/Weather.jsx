@@ -1,8 +1,10 @@
 const React = require('react');
+const openWeatherMap = require('openWeatherMap');
 
 const WeatherForm = require('WeatherForm');
 const WeatherMessage = require('WeatherMessage');
-const openWeatherMap = require('openWeatherMap');
+const ErrorModal = require('ErrorModal');
+
 
 const Weather = React.createClass({
   getInitialState() {
@@ -22,7 +24,8 @@ const Weather = React.createClass({
     const self = this;
 
     this.setState({
-      isLoading: true
+      isLoading: true,
+      errorMessage: undefined
     });
 
     openWeatherMap.getTemp(location).then(function(temp) {
@@ -31,31 +34,43 @@ const Weather = React.createClass({
         location: location,
         temp: temp
       });
-    }, function(errorMessage) {
+    }, function(e) {
       self.setState({
-        isLoading: false
+        isLoading: false,
+        errorMessage: e.message
       });
       alert(errorMessage);
     });
   },
   render() {
-    const {isLoading, location, temp} = this.state;
+    const {isLoading, location, temp, errorMessage} = this.state;
 
     // render components depending on specific state
     const renderMessage = () => {
       if (isLoading) {
-        return <h4>Fetching weather..</h4>
+        return <h4 className="text-center">Fetching weather..</h4>
       } else if (location && temp) {
         return <WeatherMessage location={location} temp={temp}/>;
       }
     };
+
+    const renderError = () => {
+      if (typeof errorMessage === 'string') {
+        return (
+          // return instance of ErrorModal component
+          <ErrorModal message={errorMessage}/>
+        );
+      }
+    };
+
     return (
       <div>
-        <h3>Get Weather</h3>
+        <h1 className="text-center">Get Weather</h1>
         {/* pass onSearch / handleSearch fn to WeatherForm */}
         <WeatherForm onSearch={this.handleSearch}/>
         {/* <WeatherMessage location={location} temp={temp}/> */}
         {renderMessage()}
+        {renderError()}
       </div>
     );
   }
