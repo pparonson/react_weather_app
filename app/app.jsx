@@ -11,7 +11,7 @@ const {Route, Router, IndexRoute, hashHistory} = require('react-router');
 $(document).foundation();
 // loaders
 require('style!css!foundation-sites/dist/css/foundation.min.css');
-require('style!css!applicationStyles')
+require('style!css!sass!applicationStyles')
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>

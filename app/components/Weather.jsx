@@ -65,7 +65,7 @@ const Weather = React.createClass({
 
     return (
       <div>
-        <h1 className="text-center page-title">Get Weather</h1>
+        <h1 className="text-center page-title title-color">Get Weather</h1>
         {/* pass onSearch / handleSearch fn to WeatherForm */}
         <WeatherForm onSearch={this.handleSearch}/>
         {/* <WeatherMessage location={location} temp={temp}/> */}
